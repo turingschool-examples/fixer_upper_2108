@@ -14,4 +14,10 @@ describe Room do
 
     expect(room.area).to eq(130)
   end
+
+  it "shows whether room is painted or not" do
+    room = Room.new(:bedroom, 10, "13")
+
+    expect(room.is_painted?).to be(false)
+  end
 end
