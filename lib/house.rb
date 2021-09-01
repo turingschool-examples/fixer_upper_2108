@@ -45,6 +45,14 @@ class House
     (@price.slice(1..).to_f / area).round(2)
   end
 
+  # def rooms_sorted_by_area
+  #   unsorted_rooms = @rooms
+  #   sorted_rooms = []
+  #     until unsorted_rooms == []
+  #     end
+  #   return sorted_rooms
+  # end
+
   def rooms_by_category
     categorized_rooms = Hash.new
     @rooms.each do |room|
