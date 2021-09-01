@@ -1,7 +1,8 @@
+require './lib/room.rb'
 class House
 
-  attr_reader :price, :address
-  attr_accessor :rooms
+  attr_reader :address
+  attr_accessor :rooms, :price
 
   def initialize(price, address)
     @price = price
@@ -17,4 +18,9 @@ class House
     @rooms.push(room)
   end
 
+  def above_market_average?
+    price.delete! ','
+    price.delete! '$'
+    price.to_i > 500000
+  end
 end
