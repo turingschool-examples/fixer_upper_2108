@@ -34,7 +34,7 @@ describe 'Room' do
       expect(room.area).to eq(130)
     end
   end
-  describe 'is_painted?' do
+  describe '#is_painted?' do
     it 'checks if a room is painted' do
       room = Room.new(:bedroom, 10, "13")
 
