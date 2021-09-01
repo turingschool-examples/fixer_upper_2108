@@ -29,4 +29,11 @@ def area
   house_area.sum
 end
 
+def details
+  {
+    ("price") => @price,
+    ("address") => @address
+  }
+end
+
 end
