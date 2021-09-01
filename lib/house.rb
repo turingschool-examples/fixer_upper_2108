@@ -13,13 +13,12 @@ class House
     @rooms << room
   end
 
-  def above_market_average
+  def above_market_average?
     false
   end
 
   def rooms_from_category(category)
-    @rooms.to_h
-    binding.pry
+    @rooms.select{|room| room.category == category}
   end
 
 
