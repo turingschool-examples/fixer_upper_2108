@@ -4,6 +4,7 @@ class House
   attr_reader :price,
               :address,
               :rooms
+              #:area
 
   def initialize(price, address)
     @price = price.delete_prefix("$").to_i
@@ -21,19 +22,22 @@ class House
     end
   end
 
-def area
-  house_area = []
-  @rooms.each do |room|
-    house_area << room.area
+  def area
+    house_area = []
+    @rooms.each do |room|
+      house_area << room.area
+    end
+    house_area.sum
   end
-  house_area.sum
-end
 
-def details
-  {
-    ("price") => @price,
-    ("address") => @address
-  }
-end
+  def details
+    {
+      ("price") => @price,
+      ("address") => @address
+    }
+  end
 
+  def price_per_square_foot
+    (@price.to_f / area.to_f).round(2)
+  end
 end
