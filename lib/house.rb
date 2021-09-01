@@ -39,10 +39,10 @@ attr_reader :price,
   def area
   total_area = 0
 
-  #possible reduce here - refactor?
   @rooms.each do |room|
     total_area += room.area
   end
+  
   total_area
   end
 
