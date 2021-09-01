@@ -28,4 +28,13 @@ describe Room do
     end
   end
 
+  describe '#paint' do
+    it "sets @is_painted attribute to true" do
+      room = Room.new(:bedroom, 10, "13")
+      room.paint
+
+      expect(room.is_painted?).to eq(true) 
+    end
+  end
+
 end
