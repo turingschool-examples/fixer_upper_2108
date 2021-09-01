@@ -12,4 +12,11 @@ describe Room do
     end
   end
 
+  describe "#area" do
+    it "returns the area of the category" do
+       room = Room.new(:bedroom, 10, "13")
+       expect(room.area).to eq(130)
+    end
+  end
+
 end
