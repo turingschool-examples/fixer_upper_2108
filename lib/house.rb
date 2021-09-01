@@ -4,9 +4,9 @@ class House
               :rooms
 
   def initialize(price, address)
-    @price = price[1..-1].to_i
-    @address = address
-    @rooms = []
+    @price    = price[1..-1].to_i
+    @address  = address
+    @rooms    = []
   end
 
   def add_room(room)
@@ -48,7 +48,10 @@ class House
   end
 
   def rooms_by_category
-    @rooms.sort_by {|room| room.category}
-
+    {
+      bedroom: rooms_from_category(:bedroom),
+      living_room: rooms_from_category(:living_room),
+      basement: rooms_from_category(:basement)
+    }
   end
 end
