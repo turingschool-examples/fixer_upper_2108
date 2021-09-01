@@ -62,4 +62,12 @@ describe House do
     end
   end
 
+  describe "#details" do
+    it "returns a has of house object attributes" do
+      house = House.new("$400000", "123 sugar lane")
+
+      expect(house.details).to eq({"price" => 400000, "address" => "123 sugar lane"})
+    end
+  end 
+
 end
