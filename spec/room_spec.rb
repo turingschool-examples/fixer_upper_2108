@@ -15,7 +15,16 @@ describe Room do
   describe "#area" do
     it "returns the area of the category" do
        room = Room.new(:bedroom, 10, "13")
+
        expect(room.area).to eq(130)
+    end
+  end
+
+  describe "is_painted?" do
+    it "boolean method that should default as false" do
+      room = Room.new(:bedroom, 10, "13")
+
+      expect(room.is_painted?).to eq(false)
     end
   end
 
