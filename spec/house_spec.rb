@@ -2,7 +2,7 @@ require './lib/room'
 require './lib/house'
 require 'pry'
 RSpec.describe House do
-
+describe '#initialize' do
   it 'exists' do
     house = House.new("$400000", "123 sugar lane")
     expect(house).to be_instance_of(House)
@@ -22,6 +22,8 @@ RSpec.describe House do
     house = House.new("$400000", "123 sugar lane")
     expect(house.rooms).to eq([])
   end
+
+end
 
   it 'can add rooms' do
     house = House.new("$400000", "123 sugar lane")
@@ -91,7 +93,7 @@ RSpec.describe House do
     house.add_room(room_4)
     house.add_room(room_1)
     house.add_room(room_3)
-    house.add_room(room_2)
+    # house.add_room(room_2)
     expect(house.rooms_sorted_by_area). to eq([room_1, room_2, room_3, room_4])
   end
 
