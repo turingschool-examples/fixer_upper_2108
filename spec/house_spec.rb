@@ -28,7 +28,7 @@ describe House do
     it "returns a boolean value indicating if the house is above the maket average" do
       house = House.new("$400000", "123 sugar lane")
 
-      expect(house.above_market_average).to eq(false)
+      expect(house.above_market_average?).to eq(false)
     end
   end
 
