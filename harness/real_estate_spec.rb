@@ -134,7 +134,7 @@ RSpec.describe 'Real Estate Spec Harness' do
     end
 
     it '14. House #rooms_by_category' do
-      expect(@house).to respond_to(:rooms_sorted_by_area).with(0).argument
+      expect(@house).to respond_to(:rooms_by_category).with(0).argument
       expected = {
         bedroom: [@room_1, @room_2],
         living_room: [@room_3],
