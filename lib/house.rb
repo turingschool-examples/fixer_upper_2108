@@ -21,5 +21,10 @@ class House
     @rooms.select{|room| room.category == category}
   end
 
+  def area
+    areas = @rooms.map{|room| room.area}
+    areas.sum
+  end
+
 
 end
