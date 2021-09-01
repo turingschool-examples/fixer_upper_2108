@@ -44,4 +44,16 @@ class House
   def price_per_square_foot
     (@price.slice(1..).to_f / area).round(2)
   end
+
+  def rooms_by_category
+    categorized_rooms = Hash.new
+    @rooms.each do |room|
+      if categorized_rooms[room.category] == nil
+        categorized_rooms[room.category] = [room]
+      else
+        categorized_rooms[room.category].push(room)
+      end
+    end
+    return categorized_rooms
+  end
 end
