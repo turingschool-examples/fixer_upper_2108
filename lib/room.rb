@@ -13,4 +13,12 @@ class Room
     @length * @width.to_i
   end
 
+  def is_painted?
+
+  end
+
+  def paint
+    
+  end
+
 end
