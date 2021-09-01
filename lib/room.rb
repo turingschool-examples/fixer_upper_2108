@@ -6,4 +6,8 @@ attr_reader :category
     @width    = width
     # require "pry"; binding.pry
   end
+
+  def area
+    @length * @width.to_i
+  end
 end
