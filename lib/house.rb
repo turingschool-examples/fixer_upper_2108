@@ -30,4 +30,11 @@ class House
     return area
   end
 
+  def details
+    {
+      "price" => @price,
+      "address" => @address
+    }
+  end
+
 end
