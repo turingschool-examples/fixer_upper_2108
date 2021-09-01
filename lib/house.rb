@@ -26,5 +26,9 @@ class House
     areas.sum
   end
 
+  def details
+    {"price" => (@price[1..@price.length]).to_i, "address" => @address}
+  end
+
 
 end
