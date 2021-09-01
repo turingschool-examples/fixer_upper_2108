@@ -29,14 +29,23 @@ RSpec.describe House do
     expect(house.above_market_average?).to eq(false)
   end
 
-  it 'takes rooms from a hash' do
+  xit 'takes rooms from a hash' do
     house = House.new(400000, "123 sugar lane")
     room_1 = Room.new(:bedroom, 10, '13')
     room_2 = Room.new(:bedroom, 11, '15')
     room_3 = Room.new(:living_room, 25, '15')
     room_4 = Room.new(:basement, 30, '41')
 
-    expect(house.rooms_from_category).to eq()
+    expect(house.rooms_from_category).to eq(:bedroom)
   end
 
+  xit 'can calculate area of house' do
+    house = House.new(400000, "123 sugar lane")
+    room_1 = Room.new(:bedroom, 10, '13')
+    room_2 = Room.new(:bedroom, 11, '15')
+    room_3 = Room.new(:living_room, 25, '15')
+    room_4 = Room.new(:basement, 30, '41')
+
+    expect(house.house_area).to eq(1900)
+  end
 end

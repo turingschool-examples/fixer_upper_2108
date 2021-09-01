@@ -27,4 +27,7 @@ class House
     basement: 1
     }
   end
+
+  def house_area
+  end
 end
