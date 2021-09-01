@@ -12,7 +12,7 @@
 
 ## Iteration 1
 
-Start with the three existing tests, and then use TDD to create a `Room` class that responds to the following interaction pattern:
+Use TDD to create a `Room` class that responds to the following interaction pattern:
 
 ```ruby
 pry(main)> require './lib/room'
