@@ -21,4 +21,12 @@ describe 'room' do
       expect(room.width).to eq("13")
     end
   end
+
+  describe 'area' do
+    it 'calculates the area of the room' do
+      room = Room.new(:bedroom, 10, "13")
+
+      expect(room.area).to eq(130)
+    end
+  end
 end
