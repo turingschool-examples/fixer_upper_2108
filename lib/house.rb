@@ -34,5 +34,9 @@ class House
     (details["price"].to_f / area.to_f).round(2)
   end
 
+  def rooms_sorted_by_area
+    @rooms.sort{|room| room.area}
+  end
+
 
 end
