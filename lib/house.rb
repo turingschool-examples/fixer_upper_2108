@@ -42,7 +42,7 @@ class House
 
   def details
     @price.slice!(0)
-    trimmed_price = @price.to_i
+    trimmed_price = @price.to_i # will make this a method when I refactor
     house_details = {
       "price" => trimmed_price,
       "address" => @address
@@ -51,12 +51,29 @@ class House
 
   def price_per_square_foot
     @price.slice!(0)
-    trimmed_price = @price.to_i
+    trimmed_price = @price.to_i # will make this a method when I refactor
 
     (trimmed_price.to_f / area.to_f).round(2)
   end
 
   def rooms_sorted_by_area
     (rooms.sort_by { |room| [room.length * room.width.to_i] }).reverse()
+  end
+
+  def rooms_by_category
+    sorted_rooms_hash = {
+      bedroom: "",
+      living_room: "",
+      basement: ""
+          }
+    rooms.each do |room|
+      if room.category == :bedroom
+        sorted_rooms_hash[:bedroom] = room
+      elsif room.category == :living_room
+        sorted_rooms_hash[:living_room] = room
+      elsif room.category == :basement
+        sorted_rooms_hash[:basement] = room
+      end
+    end
   end
 end
