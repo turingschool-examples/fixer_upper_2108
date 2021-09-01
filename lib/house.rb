@@ -1,11 +1,11 @@
 class House
   attr_reader :price,
-              :adress,
+              :address,
               :rooms
 
   def initialize(price, address)
-    @price = price
-    @address = adress
+    @price = price.delete_prefix("$").to_i
+    @address = address
     @rooms = []
   end
 
