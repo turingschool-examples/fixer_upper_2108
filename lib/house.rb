@@ -39,4 +39,20 @@ class House
         end
         sum
     end
+
+    def price_per_square_foot
+        (price.to_f/area.to_f).round(2)
+    end
+
+    def details
+        {"price" => price, "address" => @address}
+    end
+
+    def rooms_sorted_by_area
+         rooms.sort_by(&:area)
+    end
+
+    def rooms_by_category
+        {bedroom: rooms_from_category(:bedroom), living_room: rooms_from_category(:living_room), basement: rooms_from_category(:basement)}
+    end
 end
