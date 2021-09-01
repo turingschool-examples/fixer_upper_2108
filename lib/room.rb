@@ -11,7 +11,19 @@ attr_reader :category
     @length * @width.to_i
   end
 
-  def is_painted?
-    false
-  end
+  # def is_painted?
+  #   room_painted = false
+  #
+  #   if room_painted == false
+  #     puts false
+  #   end
+  # end
+  #
+  # def paint
+  #   room_painted = true
+  #   if is_painted == false
+  #     puts true
+  #   end
+  #
+  # end
 end
