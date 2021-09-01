@@ -14,4 +14,14 @@ describe House do
     end
   end
 
+  describe "#add_room" do
+    it "adds a room object to the rooms array" do
+       house = House.new("$400000", "123 sugar lane")
+       room_1 = Room.new(:bedroom, 10, "13")
+       house.add_room(room_1)
+
+       expect(house.rooms).to eq([room_1])
+    end
+  end
+
 end
