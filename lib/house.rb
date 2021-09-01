@@ -39,4 +39,13 @@ class House
     end
     return total_area
   end
+
+  def details
+    @price.slice!(0)
+    trimmed_price = @price.to_i
+    house_details = {
+      "price" => trimmed_price,
+      "address" => @address
+    }
+  end
 end
