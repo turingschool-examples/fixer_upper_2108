@@ -1,5 +1,6 @@
 require './lib/room'
 require './lib/house'
+require 'pry'
 RSpec.describe House do
 
   it 'exists' do
@@ -28,7 +29,26 @@ RSpec.describe House do
     room_2 = Room.new(:bedroom, 11, '15')
     house.add_room(room_1)
     house.add_room(room_2)
-    expect(house.rooms).to eq([room1, room2])
+    expect(house.rooms).to eq([room_1, room_2])
+  end
+
+  it 'can be above market average' do
+    house = House.new("$400000", "123 sugar lane")
+    expect(house.above_market_average).to eq(false)
+  end
+
+  it 'can return rooms from category' do
+    house = House.new("$400000", "123 sugar lane")
+    expect(house.above_market_average).to eq(false)
+    room_1 = Room.new(:bedroom, 10, '13')
+    room_2 = Room.new(:bedroom, 11, '15')
+    room_3 = Room.new(:living_room, 25, '15')
+    room_4 = Room.new(:basement, 30, '41')
+    house.add_room(room_1)
+    house.add_room(room_2)
+    house.add_room(room_3)
+    house.add_room(room_4)
+    expect(house.rooms_from_category(:bedroom)).to eq(room_1, room_2)
   end
 
 
