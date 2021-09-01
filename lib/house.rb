@@ -30,5 +30,9 @@ class House
     {"price" => (@price[1..@price.length]).to_i, "address" => @address}
   end
 
+  def price_per_square_foot
+    (details["price"].to_f / area.to_f).round(2)
+  end
+
 
 end
