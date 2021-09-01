@@ -41,7 +41,7 @@ class House
   end
 
   def rooms_sorted_by_area
-    rooms.sort { |first, second| first.area <=> second.area }.reverse!
+    rooms.sort { |first, second| -first.area <=> -second.area }
   end
 
   def rooms_by_category
