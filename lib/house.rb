@@ -55,4 +55,8 @@ class House
 
     (trimmed_price.to_f / area.to_f).round(2)
   end
+
+  def rooms_sorted_by_area
+    (rooms.sort_by { |room| [room.length * room.width.to_i] }).reverse()
+  end
 end
