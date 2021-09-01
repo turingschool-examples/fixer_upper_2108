@@ -30,4 +30,5 @@ RSpec.describe Room do
     room.paint
     expect(room.is_painted).to eq(true)
   end
+
 end
