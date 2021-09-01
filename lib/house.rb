@@ -14,7 +14,7 @@ class House
   end
 
   def above_market_average?
-    price.to_i > 400000
+    price.tr('$', '').to_i > 400000
   end
 
   def rooms_from_category(category)
