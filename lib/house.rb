@@ -1,3 +1,5 @@
+require './lib/room'
+
 class House
   attr_reader :price,
               :address,
@@ -19,5 +21,12 @@ class House
     end
   end
 
+def area
+  house_area = []
+  @rooms.each do |room|
+    house_area << room.area
+  end
+  house_area.sum
+end
 
 end
