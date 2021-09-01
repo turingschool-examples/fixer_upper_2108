@@ -42,7 +42,7 @@ describe House do
       house.add_room(room_2)
       house.add_room(room_3)
 
-      expect(house.room_from_category(:bedroom)).to eq([room_1, room_2])
+      expect(house.rooms_from_category(:bedroom)).to eq([room_1, room_2])
     end
   end
 
